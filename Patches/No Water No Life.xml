@@ -6,6 +6,7 @@
 		<operations>
 			<li Class="PatchOperationTest">
 				<xpath>/Defs/ThingCategoryDef[defName = "Mizu_Waters"]</xpath>
+                <success>Always</success>
 			</li>
             <li Class="PatchOperationReplace">
 				<xpath>/Defs/ThingDef[defName = "Cement"]</xpath>
@@ -32,9 +33,9 @@
                       <Mass>1</Mass>
                     </statBases>
                     <comps>
-                      <li Class="CompProperties_Rottable">
-                        <daysToRotStart>15</daysToRotStart>
-                        <rotDestroys>true</rotDestroys>
+                      <li Class="Concrete.CompPropertiesCountdown">
+                        <daysCountdown>15</daysCountdown>
+                        <inspectString>Affecting with damp, remaining: </inspectString>
                       </li>
                     </comps>
                   </ThingDef>
@@ -52,9 +53,9 @@
                       <Mass>1</Mass>
                     </statBases>
                     <comps>
-                      <li Class="CompProperties_Rottable">
-                        <daysToRotStart>0.1</daysToRotStart>
-                        <rotDestroys>true</rotDestroys>
+                        <li Class="Concrete.CompPropertiesCountdown">
+                        <daysCountdown>0.1</daysCountdown>
+                        <inspectString>Time remaining before initial set: </inspectString>
                       </li>
                     </comps>
                   </ThingDef>

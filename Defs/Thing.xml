@@ -12,9 +12,9 @@
       <Mass>1</Mass>
     </statBases>
     <comps>
-      <li Class="CompProperties_Rottable">
-        <daysToRotStart>15</daysToRotStart>
-        <rotDestroys>true</rotDestroys>
+      <li Class="Concrete.CompPropertiesCountdown">
+        <daysCountdown>15</daysCountdown>
+        <inspectString>Affecting with damp, remaining: </inspectString>
       </li>
     </comps>
     <stuffProps>
