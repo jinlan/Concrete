@@ -6,145 +6,65 @@
 		<operations>
 			<li Class="PatchOperationTest">
 				<xpath>/Defs/ThingCategoryDef[defName = "Mizu_Waters"]</xpath>
-                <success>Never</success>
 			</li>
-		</operations>
-	</Operation>
-
-	<Operation Class="PatchOperationSequence">
-		<success>Always</success>
-		<operations>
-			<li Class="PatchOperationTest">
-				<xpath>/Defs/ThingCategoryDef[defName = "Mizu_Waters"]</xpath>
-                <success>Always</success>
-			</li>
-            <li Class="PatchOperationRemove">
-				<xpath>/Defs/ThingDef[defName = "Concrete"]/graphicData | /Defs/RecipeDef[defName = "MakeConcrete_Raw"] | /Defs/RecipeDef[defName = "MakeConcrete"]</xpath>
+            <li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "Cement"]</xpath>
+               <value>
+                    <ThingDef ParentName="ResourceBase">
+                    <defName>Cement</defName>
+                    <label>Cement</label>
+                    <description>Cement. Used to build concrete wall.</description>
+                    <tickerType>Rare</tickerType>
+                    <graphicData>
+                      <texPath>Cement</texPath>
+                      <graphicClass>Graphic_Single</graphicClass>
+                    </graphicData>
+                        <soundInteract>Stone_Drop</soundInteract>
+                        <soundDrop>Stone_Drop</soundDrop>
+                        <useHitPoints>false</useHitPoints>
+                        <thingCategories>
+                          <li>Manufactured</li>
+                        </thingCategories>
+                    <statBases>
+                    <MaxHitPoints>200</MaxHitPoints>
+                      <MarketValue>1.9</MarketValue>
+                       <Beauty>-12</Beauty>
+                      <Mass>1</Mass>
+                    </statBases>
+                    <comps>
+                      <li Class="CompProperties_Rottable">
+                        <daysToRotStart>15</daysToRotStart>
+                        <rotDestroys>true</rotDestroys>
+                      </li>
+                    </comps>
+                  </ThingDef>
+               </value>
 			</li>
 			<li Class="PatchOperationAdd">
 				<xpath>/Defs</xpath>
                 <value>
-                      <ThingDef ParentName="ResourceBase">
-                        <defName>Cement</defName>
-                        <label>Cement</label>
-                        <description>Cement. Need to mix water before use.</description>
-                        <tickerType>Rare</tickerType>
-                        <graphicData>
-                          <texPath>Concrete</texPath>
-                          <graphicClass>Graphic_Single</graphicClass>
-                        </graphicData>
-                        <soundInteract>Stone_Drop</soundInteract>
-                        <soundDrop>Stone_Drop</soundDrop>
-                        <useHitPoints>false</useHitPoints>
-                        <statBases>
-                          <Mass>1</Mass>
-                          <MaxHitPoints>200</MaxHitPoints>
-                          <MarketValue>1.9</MarketValue>
-                           <Beauty>-12</Beauty>
-                        </statBases>
-                        <thingCategories>
-                          <li>Manufactured</li>
-                        </thingCategories>
-                        <stuffProps>
-                          <soundImpactStuff>BulletImpactGround</soundImpactStuff>
-                          <soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
-                          <soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
-                          <stuffAdjective>Cement</stuffAdjective>
-                          <statFactors>
-                            <WorkToBuild>0.5</WorkToBuild>
-                            <Beauty>0</Beauty>
-                           <Flammability>0</Flammability>
-                          </statFactors>
-                        </stuffProps>
-                        <comps>
-                          <li Class="CompProperties_Rottable">
-                            <daysToRotStart>15</daysToRotStart>
-                            <rotDestroys>true</rotDestroys>
-                          </li>
-                        </comps>
-                      </ThingDef>
-                      <RecipeDef ParentName="MakeStoneBlocksBase">
-                        <defName>MakeCement_Raw</defName>
-                        <label>MakeCement_Raw</label>
-                        <description>Make Cement from raw resource.</description>
-                        <workAmount>2000</workAmount>
-                        <ingredients>
-                           <li>
-                                <filter>
-                                    <thingDefs>
-                                        <li>Steel</li>
-                                    </thingDefs>
-                                </filter>
-                                <count>2</count>
-                            </li>
-                           <li>
-                                <filter>
-                                    <thingDefs>
-                                        <li>ChunkLimestone</li>
-                                    </thingDefs>
-                                </filter>
-                                <count>7</count>
-                            </li>
-                        </ingredients>
-                        <products>
-                            <Cement>175</Cement>
-                        </products>
-                        <fixedIngredientFilter>
-                            <thingDefs>
-                            <li>Steel</li>
-                            <li>ChunkLimestone</li>
-                          </thingDefs>
-                        </fixedIngredientFilter>
-                        <workSkill>Crafting</workSkill>
-                        <researchPrerequisite>Concrete-processing</researchPrerequisite>	
-                        <recipeUsers>
-                         <li>FueledSmithy</li>
-                         <li>ElectricSmithy</li>
-                        </recipeUsers>
-                    </RecipeDef>
-                    <RecipeDef ParentName="MakeStoneBlocksBase">
-                        <defName>MakeCement</defName>
-                        <label>MakeCement</label>
-                        <description>Make Cement.</description>
-                        <workAmount>3500</workAmount>
-                        <ingredients>
-                           <li>
-                                <filter>
-                                    <thingDefs>
-                                        <li>Steel</li>
-                                    </thingDefs>
-                                </filter>
-                                <count>2</count>
-                            </li>
-                           <li>
-                                <filter>
-                                    <thingDefs>
-                                        <li>BlocksLimestone</li>
-                                    </thingDefs>
-                                </filter>
-                                <count>150</count>
-                            </li>
-                        </ingredients>
-                        <products>
-                            <Cement>175</Cement>
-                        </products>
-                        <fixedIngredientFilter>
-                            <thingDefs>
-                            <li>Steel</li>
-                            <li>BlocksLimestone</li>
-                          </thingDefs>
-                        </fixedIngredientFilter>
-                        <workSkill>Crafting</workSkill>
-                        <researchPrerequisite>Concrete-processing</researchPrerequisite>	
-                        <recipeUsers>
-                         <li>FueledSmithy</li>
-                         <li>ElectricSmithy</li>
-                        </recipeUsers>
-                    </RecipeDef>
-                    <RecipeDef ParentName="MakeStoneBlocksBase">
-                        <defName>MakeConcrete</defName>
-                        <label>MakeConcrete</label>
-                        <description>Make concrete.</description>
+                  <ThingDef ParentName="StoneBlocksBase">
+                    <defName>Concrete</defName>
+                    <label>Concrete</label>
+                    <description>Concrete. As hard as stony material, but require days to hydrate.</description>
+                    <tickerType>Rare</tickerType>
+                    <statBases>
+                      <Mass>1</Mass>
+                    </statBases>
+                    <comps>
+                      <li Class="CompProperties_Rottable">
+                        <daysToRotStart>0.1</daysToRotStart>
+                        <rotDestroys>true</rotDestroys>
+                      </li>
+                    </comps>
+                  </ThingDef>
+                    <RecipeDef>
+                        <defName>MixConcrete</defName>
+                        <label>MixConcrete</label>
+                        <description>Mixing concrete.</description>
+                        <jobString>Mixing concrete.</jobString>
+                        <soundWorking>Interact_ConstructDirt</soundWorking>
+                        <targetCountAdjustment>20</targetCountAdjustment>
                         <workAmount>300</workAmount>
                         <ingredients>
                            <li>
@@ -164,9 +84,6 @@
                             <count>5</count>
                           </li>
                         </ingredients>
-                        <products>
-                            <Concrete>5</Concrete>
-                        </products>
                         <fixedIngredientFilter>
                             <thingDefs>
                                 <li>Cement</li>
@@ -175,16 +92,23 @@
                                 <li>Mizu_Waters</li>
                               </categories>
                         </fixedIngredientFilter>
+                        <products>
+                            <Concrete>5</Concrete>
+                        </products>
                         <researchPrerequisite>Concrete-processing</researchPrerequisite>	
                         <recipeUsers>
-                         <li>CraftingSpot</li>
+                            <li>CraftingSpot</li>
                         </recipeUsers>
+                        <allowMixingIngredients>true</allowMixingIngredients>
                     </RecipeDef>
-                <RecipeDef ParentName="MakeStoneBlocksBase">
-                    <defName>BulkMakeConcrete</defName>
-                    <label>BulkMakeConcrete</label>
-                    <description>Bulk make concrete.</description>
-                    <workAmount>1200</workAmount>
+                <RecipeDef>
+                    <defName>BulkMixConcrete</defName>
+                    <label>BulkMixConcrete</label>
+                    <description>Bulk mixing concrete.</description>
+                    <jobString>Mixing concrete.</jobString>
+                    <soundWorking>Interact_ConstructDirt</soundWorking>
+                    <targetCountAdjustment>20</targetCountAdjustment>
+                    <workAmount>800</workAmount>
                     <ingredients>
                        <li>
                             <filter>
@@ -203,21 +127,22 @@
                         <count>50</count>
                       </li>
                     </ingredients>
+                    <fixedIngredientFilter>
+                            <thingDefs>
+                                <li>Cement</li>
+                            </thingDefs>
+                            <categories>
+                                <li>Mizu_Waters</li>
+                              </categories>
+                        </fixedIngredientFilter>
                     <products>
                         <Concrete>50</Concrete>
                     </products>
-                    <fixedIngredientFilter>
-                       <thingDefs>
-                            <li>Cement</li>
-                        </thingDefs>
-                        <categories>
-                            <li>Mizu_Waters</li>
-                          </categories>
-                    </fixedIngredientFilter>
                     <researchPrerequisite>Concrete-processing</researchPrerequisite>	
-                    <recipeUsers>
-                     <li>CraftingSpot</li>
-                    </recipeUsers>
+                        <recipeUsers>
+                            <li>CraftingSpot</li>
+                        </recipeUsers>
+                        <allowMixingIngredients>true</allowMixingIngredients>
                 </RecipeDef>
                 </value>
 			</li>

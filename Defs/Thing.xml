@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="StoneBlocksBase">
+    <defName>Cement</defName>
+    <label>Cement</label>
+    <description>Cement. Used to build concrete wall.</description>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Cement</texPath>
+    </graphicData>
+    <statBases>
+      <Mass>1</Mass>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>15</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <stuffProps>
+      <stuffAdjective>Concrete</stuffAdjective>
+    </stuffProps>
+  </ThingDef>
+</Defs>

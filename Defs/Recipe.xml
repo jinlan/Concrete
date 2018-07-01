@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <RecipeDef Name="MakeCementBase" Abstract="True">
+        <jobString>Making Cement.</jobString>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Machining</soundWorking>
+        <targetCountAdjustment>20</targetCountAdjustment>
+        <workAmount>2000</workAmount>
+        <ingredients>
+           <li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+		</fixedIngredientFilter>
+        <workSkill>Crafting</workSkill>
+        <researchPrerequisite>Concrete-processing</researchPrerequisite>	
+        <recipeUsers>
+         <li>FueledSmithy</li>
+         <li>ElectricSmithy</li>
+        </recipeUsers>
+    </RecipeDef>
+
+	<RecipeDef ParentName="MakeCementBase">
+		<defName>MakeCement_Raw</defName>
+		<label>MakeCement_Raw</label>
+		<description>Make Cement from raw resource.</description>
+		<ingredients>
+           <li>
+				<filter>
+					<thingDefs>
+						<li>ChunkLimestone</li>
+					</thingDefs>
+				</filter>
+				<count>3</count>
+			</li>
+		</ingredients>
+		<products>
+			<Cement>75</Cement>
+		</products>
+		<fixedIngredientFilter>
+            <thingDefs>
+            <li>ChunkLimestone</li>
+          </thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+    
+    <RecipeDef ParentName="MakeCementBase">
+		<defName>MakeCement</defName>
+		<label>MakeCement</label>
+		<description>Make Cement.</description>
+		<ingredients>
+           <li>
+				<filter>
+					<thingDefs>
+						<li>BlocksLimestone</li>
+					</thingDefs>
+				</filter>
+				<count>75</count>
+			</li>
+		</ingredients>
+		<products>
+			<Cement>75</Cement>
+		</products>
+		<fixedIngredientFilter>
+            <thingDefs>
+            <li>BlocksLimestone</li>
+          </thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+</Defs>
