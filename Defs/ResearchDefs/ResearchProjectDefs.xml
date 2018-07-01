@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>Concrete-processing</defName>
+    <label>Concrete-processing</label>
+    <techLevel>Industrial</techLevel>
+    <baseCost>1200</baseCost>
+    <description>Concrete-processing.</description>
+    <prerequisites>
+      <li>Stonecutting</li>
+    </prerequisites>
+    <tab>Concrete</tab>
+    <researchViewX>0</researchViewX>
+    <researchViewY>1</researchViewY>
+  </ResearchProjectDef>
+
+</Defs>

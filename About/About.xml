@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+ 
+ <name>Concrete</name>
+ 
+ <author>TW</author>
+ 
+ <targetVersion>0.18.1722</targetVersion>
+
+  <description>
+  Concrete
+  
+  Requires:
+  HugsLib: https://ludeon.com/forums/index.php?topic=28066.0
+  
+  Support: 
+  No Water No Life: https://github.com/himesama1301/MizuMod/releases
+  
+  Please load this mod after those mods listed up here.
+</description>
+
+
+</ModMetaData>
