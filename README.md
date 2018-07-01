@@ -13,3 +13,7 @@ Implemented concrete. As hard as stony material, but build much faster. Save a l
   https://github.com/himesama1301/MizuMod/releases
   
 Please load this mod after those mods listed up here.
+
+
+PS:
+Concrete is actually a Neolithic technology, but I set it to industrial so dropper start will be easier to research. It's significantly more simpler for modern people.
