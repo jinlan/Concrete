@@ -3,8 +3,8 @@
   <ResearchProjectDef>
     <defName>Concrete-processing</defName>
     <label>Concrete-processing</label>
-    <techLevel>Industrial</techLevel>
-    <baseCost>1200</baseCost>
+    <techLevel>Neolithic</techLevel>
+    <baseCost>800</baseCost>
     <description>Concrete-processing.</description>
     <prerequisites>
       <li>Stonecutting</li>

@@ -1,15 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<ModMetaData>
- 
- <name>Concrete</name>
- 
- <author>TW</author>
- 
- <targetVersion>0.18.1722</targetVersion>
-
-  <description>
-Concrete
+Rimworld mod Concrete
 Implemented concrete. As hard as stony material, but build much faster. Save a lot of building work hour, but have 2 drawbacks:
 
 1 Requires limestone, which is not available on all maps. You can grab limestones from other map, or buy limestone bricks.
@@ -24,8 +13,3 @@ Implemented concrete. As hard as stony material, but build much faster. Save a l
   https://github.com/himesama1301/MizuMod/releases
   
 Please load this mod after those mods listed up here.
-
-</description>
-
-
-</ModMetaData>
