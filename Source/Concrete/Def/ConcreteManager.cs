@@ -8,8 +8,8 @@ namespace Concrete {
 
         private SimpleCurve hydrateCurve = new SimpleCurve();
         private int daysToHydrate;
-
         private Dictionary<Thing, int> concreteThingList;
+
         public ConcreteManager(World world) : base(world) {
             concreteThingList = new Dictionary<Thing, int>();
             daysToHydrate = Concrete.SettingInt["daysToHydrate"].Value;
@@ -57,7 +57,7 @@ namespace Concrete {
             }
         }
         public override void ExposeData() {
-            Scribe_Collections.Look<Thing, int>(ref concreteThingList, "cTL", LookMode.Def, LookMode.Value);
+            Scribe_Collections.Look<Thing, int>(ref concreteThingList, "cTL", LookMode.Reference, LookMode.Value);
         }
     }
 }
