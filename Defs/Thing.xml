@@ -9,6 +9,7 @@
       <texPath>Cement</texPath>
     </graphicData>
     <statBases>
+    <MarketValue>2.5</MarketValue>
       <Mass>1</Mass>
     </statBases>
     <comps>
