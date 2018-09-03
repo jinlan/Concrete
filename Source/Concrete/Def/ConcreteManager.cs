@@ -57,7 +57,9 @@ namespace Concrete {
             }
         }
         public override void ExposeData() {
-            Scribe_Collections.Look<Thing, int>(ref concreteThingList, "cTL", LookMode.Reference, LookMode.Value);
+            List<Thing> workingThingList = new List<Thing>();
+            List<int> workingIntList = new List<int>();
+            Scribe_Collections.Look<Thing, int>(ref concreteThingList, "cTL", LookMode.Reference, LookMode.Value, ref workingThingList, ref workingIntList);
         }
     }
 }
